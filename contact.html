@@ -1,0 +1,110 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تواصل — شركة النجوم للملابس الجاهزة</title><link rel="stylesheet" href="assets/css/style.css"><style>
+/* === Drawer Navigation (mobile) === */
+:root { --drawer-width: 280px; }
+
+/* Hide hamburger by default (desktop) */
+.menu-toggle { display: none; }
+
+@media (max-width: 1024px) {
+  /* Hide inline nav on mobile */
+  #main-nav.top-nav { display: none !important; }
+
+  .menu-toggle{
+    display:inline-flex !important; align-items:center; justify-content:center;
+    width:40px; height:40px; border:1px solid #d6e2f3; border-radius:8px; background:#fff;
+    font-size:20px; line-height:1; cursor:pointer;
+  }
+
+  body.nav-open #main-nav.top-nav{
+    display:block !important; position:fixed; top:0; bottom:0; right:0;
+    width:var(--drawer-width); padding:16px; background:#fff; overflow-y:auto;
+    box-shadow:0 0 0 9999px rgba(0,0,0,.25); z-index:1100;
+  }
+
+  .nav-backdrop{ display:none; }
+  body.nav-open .nav-backdrop{
+    display:block; position:fixed; inset:0; background:rgba(0,0,0,.2); z-index:1000;
+  }
+
+  /* Optional: make nav links stacked and larger in drawer */
+  #main-nav.top-nav ul{ list-style:none; margin:0; padding:0; }
+  #main-nav.top-nav a{ display:block; padding:10px 6px; border-radius:8px; }
+  #main-nav.top-nav a:hover{ background:#f3f7ff; }
+}
+</style>
+</head><body>
+<div class="drawer-overlay"></div>
+<aside class="drawer"><nav id="main-nav" class="top-nav">
+<div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+  <a href="index.html">الرئيسية</a>
+  <a href="kids/boys.html">أولادي</a>
+  <a href="kids/girls.html">بناتي</a>
+  <a href="kids/newborn.html">مواليد</a>
+  <a href="women/index.html">نسائي</a>
+  <a href="others/index.html">منتجات أخرى</a>
+  <a href="about.html">من نحن</a>
+  <a href="contact.html">تواصل</a>
+</nav></aside>
+<header class="topbar"><div class="container">
+  <a class="brand" href="index.html" href="index.html"><img class="logo" src="assets/images/logo.png" alt="Logo">
+    <div class="brand-txt"><div class="name">شركة النجوم للملابس الجاهزة</div><div class="addr">جدة – مركز بن محفوظ، الدور الأول</div></div>
+  </a>
+  <nav class="nav">
+    <a href="index.html">الرئيسية</a>
+    <a href="kids/boys.html">أولادي</a>
+    <a href="kids/girls.html">بناتي</a>
+    <a href="kids/newborn.html">مواليد</a>
+    <a href="women/index.html">نسائي</a>
+    <a href="others/index.html">منتجات أخرى</a>
+    <a href="about.html">من نحن</a>
+    <a href="contact.html">تواصل</a>
+  </nav>
+  <button class="burger" aria-expanded="false">☰</button>
+</div></header>
+<main class="container">
+<h1>تواصل</h1>
+<ul>
+  <li>WhatsApp: <a href="https://wa.me/966596198690" target="_blank">966596198690</a></li>
+  <li>Instagram: <a href="https://www.instagram.com/stars.companyy?igsh=MTM2bXA1NG5yenR1bQ==" target="_blank">@stars.companyy</a></li>
+  <li>العنوان: جدة – مركز بن محفوظ، الدور الأول</li>
+</ul>
+</main>
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/stars.companyy?igsh=MTM2bXA1NG5yenR1bQ==" target="_blank" rel="noopener">Instagram</a>
+    ·
+    <a href="https://wa.me/966596198690" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© جميع الحقوق محفوظة لشركة النجوم للملابس الجاهزة</div>
+</footer>
+<a class="fab-whatsapp" href="https://wa.me/966596198690" target="_blank">واتساب</a>
+<div class="lightbox"><img alt=""></div>
+<script src="assets/js/common.js"></script>
+<script>
+/* === Drawer Navigation toggling === */
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('main-nav');
+  let backdrop = document.getElementById('nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'nav-backdrop';
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  const closeNav = () => { document.body.classList.remove('nav-open'); toggle?.setAttribute('aria-expanded','false'); };
+  const openNav  = () => { document.body.classList.add('nav-open');  toggle?.setAttribute('aria-expanded','true');  };
+
+  if (toggle) {
+    toggle.addEventListener('click', () => document.body.classList.contains('nav-open') ? closeNav() : openNav());
+  }
+  if (backdrop) backdrop.addEventListener('click', closeNav);
+  if (nav) nav.addEventListener('click', e => { if (e.target.tagName.toLowerCase()==='a') closeNav(); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeNav(); });
+});
+</script>
+</body></html<button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+>
